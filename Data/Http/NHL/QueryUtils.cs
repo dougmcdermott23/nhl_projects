@@ -1,6 +1,9 @@
-﻿using System.Net.Http.Json;
+﻿using System.Net.Http.Headers;
+using System.Net.Http.Json;
 
 namespace Data.Http.NHL;
+
+using static Schema.NHL.EndPoints;
 
 public static class QueryUtils
 {
@@ -16,5 +19,25 @@ public static class QueryUtils
         }
 
         return value;
+    }
+
+    public static async Task<T?> RunAsync<T>(string endPoint)
+    {
+        using var client = new HttpClient();
+
+        client.BaseAddress = new Uri(BaseUrl);
+
+        client.DefaultRequestHeaders.Accept.Clear();
+
+        client.DefaultRequestHeaders
+              .Accept
+              .Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+        if (!Uri.TryCreate(client.BaseAddress, endPoint, out var uri))
+        {
+            throw new ArgumentException($"URI with end point {endPoint} was not successfully created.");
+        }
+
+        return await client.GetValueAsync<T>(uri.ToString());
     }
 }

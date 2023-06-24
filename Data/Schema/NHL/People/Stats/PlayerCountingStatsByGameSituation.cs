@@ -2,7 +2,7 @@
 
 namespace Data.Schema.NHL.People.Stats;
 
-public partial class PlayerSeasonStatsByGameSituation
+public partial class PlayerCountingStatsByGameSituation
 {
     [JsonPropertyName("goalsInFirstPeriod")]
     public int? GoalsInFirstPeriod { get; set; }

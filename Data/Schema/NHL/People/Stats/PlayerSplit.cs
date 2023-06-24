@@ -14,7 +14,7 @@ public class PlayerSplit
     public string Season { get; set; } = String.Empty;
 
     [JsonPropertyName("stat")]
-    public PlayerSeasonStats? Stats { get; set; }
+    public PlayerCountingStats? Stats { get; set; }
 
     [JsonPropertyName("team")]
     public Team? Team { get; set; }

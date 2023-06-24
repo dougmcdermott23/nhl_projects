@@ -1,14 +1,14 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Data.Schema.NHL.Teams.Stats;
+namespace Data.Schema.NHL.People.Stats;
 
 using NHL.Stats;
 
-public class TeamStatsInfo
+public class PlayerStatInfo
 {
     [JsonPropertyName("type")]
     public StatType? Type { get; set; }
 
     [JsonPropertyName("splits")]
-    public List<TeamSplit> Splits { get; set; } = new();
+    public List<PlayerSplit> PlayerSplits { get; set; } = new();
 }

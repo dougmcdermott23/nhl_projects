@@ -14,7 +14,7 @@ public class BoxScoreTeam
     public BoxScoreTeamStats? TeamStats { get; set; }
 
     [JsonPropertyName("players")]
-    public Dictionary<string, Person> Players { get; set; } = new();
+    public Dictionary<string, Player> Players { get; set; } = new();
 
     [JsonPropertyName("goalies")]
     public List<int?> Goalies { get; set; } = new();

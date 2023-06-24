@@ -2,7 +2,7 @@
 
 namespace Data.Schema.NHL.People.Stats;
 
-public partial class PlayerSeasonStatsRankings
+public partial class PlayerCountingStatsRankings
 {
     #region Skater Stats
 

@@ -2,7 +2,7 @@
 
 namespace Data.Schema.NHL.People.Stats;
 
-public partial class PlayerSeasonStats
+public partial class PlayerCountingStats
 {
     [JsonPropertyName("timeOnIce")]
     public string TimeOnIce { get; set; } = String.Empty;
@@ -31,7 +31,7 @@ public partial class PlayerSeasonStats
     public string EvenTimeOnIce { get; set; } = String.Empty;
 
     [JsonPropertyName("penaltyMinutes")]
-    public string PenaltyMinutes { get; set; } = String.Empty;
+    public int? PenaltyMinutes { get; set; }
 
     [JsonPropertyName("faceOffPct")]
     public double? FaceOffPct { get; set; }
